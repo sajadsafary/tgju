@@ -26,7 +26,7 @@ type AllCommon2 struct {
 	Category string `json:"category"`
 	Title string `json:"title"`
 	Price string `json:"price"`
-	Change string `json:"change"`
+	Change AllCommon2Change `json:"change"`
 	Low string `json:"low"`
 	High string `json:"high"`
 	CreatedAt string `json:"created_at"`
@@ -38,7 +38,7 @@ type _AllCommon2 AllCommon2
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAllCommon2(key int32, category string, title string, price string, change string, low string, high string, createdAt string) *AllCommon2 {
+func NewAllCommon2(key int32, category string, title string, price string, change AllCommon2Change, low string, high string, createdAt string) *AllCommon2 {
 	this := AllCommon2{}
 	this.Key = key
 	this.Category = category
@@ -156,9 +156,9 @@ func (o *AllCommon2) SetPrice(v string) {
 }
 
 // GetChange returns the Change field value
-func (o *AllCommon2) GetChange() string {
+func (o *AllCommon2) GetChange() AllCommon2Change {
 	if o == nil {
-		var ret string
+		var ret AllCommon2Change
 		return ret
 	}
 
@@ -167,7 +167,7 @@ func (o *AllCommon2) GetChange() string {
 
 // GetChangeOk returns a tuple with the Change field value
 // and a boolean to check if the value has been set.
-func (o *AllCommon2) GetChangeOk() (*string, bool) {
+func (o *AllCommon2) GetChangeOk() (*AllCommon2Change, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -175,7 +175,7 @@ func (o *AllCommon2) GetChangeOk() (*string, bool) {
 }
 
 // SetChange sets field value
-func (o *AllCommon2) SetChange(v string) {
+func (o *AllCommon2) SetChange(v AllCommon2Change) {
 	o.Change = v
 }
 

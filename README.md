@@ -84,6 +84,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AllCommon2](docs/AllCommon2.md)
+ - [AllCommon2Change](docs/AllCommon2Change.md)
  - [CommonLocalResponse](docs/CommonLocalResponse.md)
 
 
