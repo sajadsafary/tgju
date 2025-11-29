@@ -1,0 +1,140 @@
+openapi: 3.0.0
+info:
+  contact:
+    email: support@persianapi.com
+  description: TGJU Web Service Documentation
+  title: TGJU Web Service
+  version: 1.0.0
+servers:
+- description: PersianAPI Studio Server
+  url: https://studio.persianapi.com/index.php
+security:
+- bearerAuth: []
+tags:
+- description: داده های عمومی (پکیج پایه)
+  name: General
+paths:
+  /web-service/common/gold-currency-coin:
+    get:
+      description: وب سرویس داده های عمومی
+      operationId: get.web-service.common1
+      parameters:
+      - description: فرمت خروجی
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          default: json
+          enum:
+          - json
+          - xml
+          type: string
+        style: form
+      - description: تعداد موارد ارایه شده در صفحه
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 30
+          type: integer
+        style: form
+      - description: شماره صفحه برای ارائه دیتا
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CommonLocalResponse"
+          description: عملیات موفق
+        "400":
+          description: پارامتر های ارسالی اشتباه است
+        "401":
+          description: هویت شما تایید نشده است
+        "403":
+          description: وب سرویس شما غیرفعال شده و یا دسترسی لازم را ندارید
+        "404":
+          description: وب سرویس مورد نظر پیدا نشد
+      security:
+      - bearerAuth: []
+      summary: داده های عمومی - بازار داخلی
+      tags:
+      - General
+components:
+  schemas:
+    CommonLocalResponse:
+      example:
+        result:
+        - high: high
+          low: low
+          price: price
+          change: change
+          created_at: created_at
+          category: category
+          title: title
+          key: 0
+        - high: high
+          low: low
+          price: price
+          change: change
+          created_at: created_at
+          category: category
+          title: title
+          key: 0
+      properties:
+        result:
+          items:
+            $ref: "#/components/schemas/AllCommon2"
+          type: array
+      type: object
+    AllCommon2:
+      example:
+        high: high
+        low: low
+        price: price
+        change: change
+        created_at: created_at
+        category: category
+        title: title
+        key: 0
+      properties:
+        key:
+          type: integer
+        category:
+          type: string
+        title:
+          type: string
+        price:
+          type: string
+        change:
+          type: string
+        low:
+          type: string
+        high:
+          type: string
+        created_at:
+          type: string
+      required:
+      - category
+      - change
+      - created_at
+      - high
+      - key
+      - low
+      - price
+      - title
+      type: object
+  securitySchemes:
+    bearerAuth:
+      bearerFormat: JWT
+      scheme: bearer
+      type: http
