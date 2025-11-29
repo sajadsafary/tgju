@@ -77,7 +77,7 @@ components:
         - high: high
           low: low
           price: price
-          change: change
+          change: AllCommon2_change
           created_at: created_at
           category: category
           title: title
@@ -85,7 +85,7 @@ components:
         - high: high
           low: low
           price: price
-          change: change
+          change: AllCommon2_change
           created_at: created_at
           category: category
           title: title
@@ -101,7 +101,7 @@ components:
         high: high
         low: low
         price: price
-        change: change
+        change: AllCommon2_change
         created_at: created_at
         category: category
         title: title
@@ -116,7 +116,7 @@ components:
         price:
           type: string
         change:
-          type: string
+          $ref: "#/components/schemas/AllCommon2_change"
         low:
           type: string
         high:
@@ -133,6 +133,10 @@ components:
       - price
       - title
       type: object
+    AllCommon2_change:
+      oneOf:
+      - type: string
+      - type: number
   securitySchemes:
     bearerAuth:
       bearerFormat: JWT

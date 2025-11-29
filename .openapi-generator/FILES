@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -7,13 +6,14 @@ api_general.go
 client.go
 configuration.go
 docs/AllCommon2.md
+docs/AllCommon2Change.md
 docs/CommonLocalResponse.md
 docs/GeneralAPI.md
 git_push.sh
 go.mod
 go.sum
 model_all_common2.go
+model_all_common2_change.go
 model_common_local_response.go
 response.go
-test/api_general_test.go
 utils.go

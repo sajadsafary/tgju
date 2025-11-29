@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Category** | **string** |  | 
 **Title** | **string** |  | 
 **Price** | **string** |  | 
-**Change** | **string** |  | 
+**Change** | [**AllCommon2Change**](AllCommon2Change.md) |  | 
 **Low** | **string** |  | 
 **High** | **string** |  | 
 **CreatedAt** | **string** |  | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAllCommon2
 
-`func NewAllCommon2(key int32, category string, title string, price string, change string, low string, high string, createdAt string, ) *AllCommon2`
+`func NewAllCommon2(key int32, category string, title string, price string, change AllCommon2Change, low string, high string, createdAt string, ) *AllCommon2`
 
 NewAllCommon2 instantiates a new AllCommon2 object
 This constructor will assign default values to properties that have it defined,
@@ -114,20 +114,20 @@ SetPrice sets Price field to given value.
 
 ### GetChange
 
-`func (o *AllCommon2) GetChange() string`
+`func (o *AllCommon2) GetChange() AllCommon2Change`
 
 GetChange returns the Change field if non-nil, zero value otherwise.
 
 ### GetChangeOk
 
-`func (o *AllCommon2) GetChangeOk() (*string, bool)`
+`func (o *AllCommon2) GetChangeOk() (*AllCommon2Change, bool)`
 
 GetChangeOk returns a tuple with the Change field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChange
 
-`func (o *AllCommon2) SetChange(v string)`
+`func (o *AllCommon2) SetChange(v AllCommon2Change)`
 
 SetChange sets Change field to given value.
 
